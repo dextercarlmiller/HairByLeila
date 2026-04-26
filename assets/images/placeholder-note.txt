@@ -1,0 +1,65 @@
+PHOTO PLACEHOLDERS — Hair By Leila Website
+==========================================
+
+Hi Leila! Here's a guide to every place on the site where a photo should go.
+Simply replace the placeholder elements with <img> tags pointing to your image files.
+
+Place all your photos in this folder: assets/images/
+
+------------------------------------------------------------
+1. index.html — Hero Section
+   What: A full-width background image of your salon, a gorgeous hair transformation,
+         or a professional shot of you at work.
+   Where in code: <!-- PHOTO PLACEHOLDER: Full-width hero background image -->
+   How to use: Add a CSS background-image on .hero, e.g.:
+     background-image: url('../assets/images/hero-bg.jpg');
+     background-size: cover; background-position: center;
+
+2. index.html — Intro Section (Meet Leila)
+   What: A warm, professional portrait of you — smiling, in your element.
+   Where in code: <div class="intro__image-placeholder">
+   How to use: Replace the div with:
+     <img src="assets/images/leila-portrait.jpg" alt="Leila, Fort Wayne hairstylist" />
+
+3. index.html — Instagram Teaser Grid (6 photos)
+   What: Six of your best work photos — balayage results, color transformations, cuts, etc.
+   Where in code: <div class="ig-placeholder">📸</div> (6 of these)
+   How to use: Replace each div with:
+     <img src="assets/images/work-1.jpg" alt="Balayage by Hair By Leila" />
+     (number them: work-1.jpg through work-6.jpg, or use descriptive names)
+
+------------------------------------------------------------
+4. services.html — CTA Background
+   What: An atmospheric photo of you working in your salon — candid and warm.
+   Where in code: <!-- PHOTO PLACEHOLDER: Background image of Leila working in her salon -->
+   How to use: Add a CSS background-image on .services-cta or .services-cta__box.
+
+------------------------------------------------------------
+5. about.html — Portrait (large)
+   What: Your best professional photo — larger format, 3:4 or 4:5 ratio looks great.
+   Where in code: <div class="about-photo__placeholder">
+   How to use: Replace the entire div with:
+     <img src="assets/images/leila-portrait-large.jpg"
+          alt="Leila — Fort Wayne independent hairstylist"
+          style="border-radius:12px; width:100%; box-shadow:var(--shadow);" />
+
+6. about.html — Gallery Teaser
+   What: A collage or mosaic of your best before-and-after transformations.
+         Could also be a single dramatic before/after side-by-side.
+   Where in code: <div class="gallery-teaser__placeholder">
+   How to use: Replace the div with a grid of <img> tags, or a single large image.
+
+------------------------------------------------------------
+RECOMMENDED IMAGE SIZES:
+  Hero background:    1920 × 1080px minimum (JPG, compressed to ~200–400KB)
+  Leila portrait:     800 × 1000px (JPG, ~100–200KB)
+  Instagram grid:     600 × 600px each (JPG, ~80–120KB each)
+  Gallery teaser:     1200 × 600px (JPG, ~150–250KB)
+
+TIPS:
+  - Use descriptive filenames: leila-balayage-result.jpg beats IMG_1234.jpg
+  - Compress images before uploading (use squoosh.app for free)
+  - Add alt text to every <img> for accessibility and SEO
+  - WebP format will load faster than JPG if your photos are large
+
+If you have questions, reach out to your web developer. You've got this! 💛

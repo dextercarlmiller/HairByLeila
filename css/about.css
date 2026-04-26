@@ -1,0 +1,246 @@
+/* ============================================================
+   ABOUT CSS — Hair By Leila
+   Page header, bio grid, stats bar, philosophy cards, gallery teaser
+   ============================================================ */
+
+/* ── Page Header ── */
+.page-header {
+  background: linear-gradient(135deg, #2c2420 0%, #1a1008 60%, #2c2016 100%);
+  padding: 5rem 1.25rem 4rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: #fff;
+  margin-bottom: 0.75rem;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.page-header p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  margin: 0 auto;
+  animation: fadeInUp 0.9s 0.1s ease both;
+}
+
+/* ── Bio Section ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* Photo column */
+.about-photo { position: relative; }
+
+.about-photo__placeholder {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #e8ddd0, #d4c4b0);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* PHOTO PLACEHOLDER: Replace with <img src="assets/images/leila-portrait.jpg" alt="Leila, Fort Wayne hairstylist"> */
+}
+
+.about-photo__inner {
+  text-align: center;
+  padding: 1rem;
+}
+
+.about-photo__inner span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.about-photo__inner p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.about-photo__badge {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(201,169,110,0.45);
+  line-height: 1.2;
+}
+
+.about-photo__badge strong {
+  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  display: block;
+}
+
+.about-photo__badge span {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Text column */
+.about-text__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.about-text h2 {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.about-text h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: 0.6rem;
+  border-radius: 2px;
+}
+
+.about-text p { color: var(--muted); }
+.about-text strong { color: var(--text); font-weight: 700; }
+.about-text em { font-style: italic; color: var(--charcoal); }
+
+.about-text .btn { margin-top: 0.75rem; }
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-photo__badge {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  background: var(--charcoal);
+  padding: 3rem 1.25rem;
+}
+
+.stats-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── Philosophy Section ── */
+.philosophy { background: var(--bg); }
+
+.philosophy__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.philosophy-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow);
+  border-bottom: 3px solid transparent;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.philosophy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-bottom-color: var(--gold);
+}
+
+.philosophy-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.philosophy-card h3 {
+  margin-bottom: 0.6rem;
+  color: var(--charcoal);
+}
+
+.philosophy-card p {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ── Gallery Teaser ── */
+.gallery-teaser { background: var(--surface); }
+
+.gallery-teaser__placeholder {
+  background: linear-gradient(135deg, #f0ebe4, #e8ddd0);
+  border-radius: var(--radius);
+  padding: 4rem 2rem;
+  text-align: center;
+  border: 2px dashed rgba(201,169,110,0.4);
+  /* PHOTO PLACEHOLDER: Replace with a grid of before/after images or a salon photo collage */
+}
+
+.gallery-teaser__placeholder p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ── Fade-in animation ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+  .philosophy__grid { grid-template-columns: 1fr; }
+}

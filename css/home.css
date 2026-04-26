@@ -1,0 +1,326 @@
+/* ============================================================
+   HOME CSS — Hair By Leila
+   Hero, trust bar, intro, services grid, testimonials, Instagram
+   ============================================================ */
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c2420 0%, #1a1008 60%, #2c2016 100%);
+  overflow: hidden;
+  padding: 4rem 1.25rem;
+}
+
+/* CSS-only noise/grain texture */
+.hero__noise {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* Gold gradient overlay at bottom */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, transparent, rgba(201,169,110,0.07));
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  animation: fadeInUp 0.9s ease both;
+}
+
+.hero__eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  color: #fff;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero__tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.25rem;
+}
+
+.hero__sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 1.05rem;
+  margin-bottom: 2.25rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__ctas .btn--outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.hero__ctas .btn--outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ── Fade-in keyframe ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Trust Bar ── */
+.trust-bar {
+  background: var(--gold);
+  padding: 0.9rem 1.25rem;
+}
+
+.trust-bar__inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trust-bar__inner span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* ── Intro Section ── */
+.intro__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.intro__image-wrap { position: relative; }
+
+.intro__image-placeholder {
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, #e8ddd0, #d4c4b0);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--muted);
+  font-style: italic;
+  box-shadow: var(--shadow);
+  /* PHOTO PLACEHOLDER: Replace this div with <img> of Leila's professional portrait */
+}
+
+.intro__text h2 {
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.intro__text h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: 0.6rem;
+  border-radius: 2px;
+}
+
+.intro__text p { color: var(--muted); }
+.intro__text strong { color: var(--text); font-weight: 700; }
+.intro__text em { font-style: italic; color: var(--charcoal); }
+
+.intro__text .btn { margin-top: 0.75rem; }
+
+@media (max-width: 768px) {
+  .intro__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ── Services Preview Grid ── */
+.services-preview { background: var(--bg); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.service-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.services-preview__cta { text-align: center; margin-top: 1rem; }
+
+/* ── Testimonials ── */
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-hover);
+}
+
+.testimonial-card__stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  flex: 1;
+}
+
+.testimonial-card__author {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: 0.04em;
+}
+
+.testimonial-card--cta {
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+}
+
+.testimonial-card--cta .testimonial-card__stars { color: var(--gold); }
+.testimonial-card--cta p { color: rgba(255,255,255,0.8); }
+
+/* ── Instagram Teaser ── */
+.instagram-teaser { background: var(--bg); }
+
+.instagram-teaser__content { text-align: center; }
+
+.instagram-teaser__handle {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.instagram-teaser__content h2 {
+  margin-bottom: 0.75rem;
+}
+
+.instagram-teaser__content > p {
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.instagram-teaser__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.ig-placeholder {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #e8ddd0, #d4c4b0);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  /* PHOTO PLACEHOLDER: Replace each div with an <img> of Leila's Instagram work */
+}
+
+@media (max-width: 480px) {
+  .instagram-teaser__grid { grid-template-columns: repeat(2, 1fr); }
+  .ig-placeholder:nth-child(n+5) { display: none; }
+}
